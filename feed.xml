@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog • Un Pixel • FR</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</description>
+    <title>Blog • Un Pixel</title>
+    <description></description>
     <link>http://leblog.unpixel.fr/</link>
     <atom:link href="http://leblog.unpixel.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Nov 2015 23:08:11 +0100</pubDate>
-    <lastBuildDate>Mon, 16 Nov 2015 23:08:11 +0100</lastBuildDate>
+    <pubDate>Tue, 17 Nov 2015 10:02:58 +0100</pubDate>
+    <lastBuildDate>Tue, 17 Nov 2015 10:02:58 +0100</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
-        <title>Customize your Jekyll blog - Part II</title>
+        <title>Personnaliser son blog Jekyll - Partie II</title>
         <description>&lt;p&gt;This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go through them:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/github/2015/11/11/build-your-own-blog-with-jekyll.html&quot;&gt;Build your own blog with Jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/gulp/2015/11/12/better-jekyll-workflow-with-gulp.html&quot;&gt;A better Jekyll workflow with gulp&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/sass/2015/11/13/customize-your-jekyll-blog-part-i.html&quot;&gt;Customize your Jekyll blog - Part I&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-creer-votre-blog-avec-jekyll/&quot;&gt;Build your own blog with Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-maintenir-son-blog-jekyll-efficacement-avec-gulp/&quot;&gt;A better Jekyll workflow with gulp&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-personnaliser-son-blog-jekyll-partie-i/&quot;&gt;Customize your Jekyll blog - Part I&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Customize your Jekyll blog - Part II&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -280,8 +279,8 @@ layout: default_post
 
 </description>
         <pubDate>Sat, 14 Nov 2015 09:00:00 +0100</pubDate>
-        <link>http://leblog.unpixel.fr/jekyll/blog/sass/2015/11/14/customize-your-jekyll-blog-part-ii.html</link>
-        <guid isPermaLink="true">http://leblog.unpixel.fr/jekyll/blog/sass/2015/11/14/customize-your-jekyll-blog-part-ii.html</guid>
+        <link>http://leblog.unpixel.fr/2015-11-personnaliser-son-blog-jekyll-partie-ii/</link>
+        <guid isPermaLink="true">http://leblog.unpixel.fr/2015-11-personnaliser-son-blog-jekyll-partie-ii/</guid>
         
         
         <category>jekyll</category>
@@ -293,14 +292,14 @@ layout: default_post
       </item>
     
       <item>
-        <title>Customize your Jekyll blog - Part I</title>
+        <title>Personnaliser son blog Jekyll - Partie I</title>
         <description>&lt;p&gt;This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go through them:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/github/2015/11/11/build-your-own-blog-with-jekyll.html&quot;&gt;Build your own blog with Jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/gulp/2015/11/12/better-jekyll-workflow-with-gulp.html&quot;&gt;A better Jekyll workflow with gulp&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-creer-votre-blog-avec-jekyll/&quot;&gt;Build your own blog with Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-maintenir-son-blog-jekyll-efficacement-avec-gulp/&quot;&gt;A better Jekyll workflow with gulp&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Customize your Jekyll blog - Part I&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/sass/2015/11/14/customize-your-jekyll-blog-part-ii.html&quot;&gt;Customize your Jekyll blog - Part II&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-personnaliser-son-blog-jekyll-partie-ii/&quot;&gt;Customize your Jekyll blog - Part II&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;You can view or download the source files on the &lt;a href=&quot;https://github.com/konpa/jekyll-tutorial/tree/part-three&quot;&gt;Jekyll tutorial github repo&lt;/a&gt;.&lt;/p&gt;
@@ -629,8 +628,8 @@ layout: default
 
 </description>
         <pubDate>Fri, 13 Nov 2015 09:00:00 +0100</pubDate>
-        <link>http://leblog.unpixel.fr/jekyll/blog/sass/2015/11/13/customize-your-jekyll-blog-part-i.html</link>
-        <guid isPermaLink="true">http://leblog.unpixel.fr/jekyll/blog/sass/2015/11/13/customize-your-jekyll-blog-part-i.html</guid>
+        <link>http://leblog.unpixel.fr/2015-11-personnaliser-son-blog-jekyll-partie-i/</link>
+        <guid isPermaLink="true">http://leblog.unpixel.fr/2015-11-personnaliser-son-blog-jekyll-partie-i/</guid>
         
         
         <category>jekyll</category>
@@ -642,14 +641,14 @@ layout: default
       </item>
     
       <item>
-        <title>A better Jekyll workflow with Gulp</title>
+        <title>Maintenir son blog Jekyll efficacement avec Gulp</title>
         <description>&lt;p&gt;This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go through them:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/github/2015/11/11/build-your-own-blog-with-jekyll.html&quot;&gt;Build your own blog with Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-creer-votre-blog-avec-jekyll/&quot;&gt;Build your own blog with Jekyll&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;A better Jekyll workflow with gulp&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/sass/2015/11/13/customize-your-jekyll-blog-part-i.html&quot;&gt;Customize your Jekyll blog - Part I&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/sass/2015/11/14/customize-your-jekyll-blog-part-ii.html&quot;&gt;Customize your Jekyll blog - Part II&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-personnaliser-son-blog-jekyll-partie-i/&quot;&gt;Customize your Jekyll blog - Part I&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-personnaliser-son-blog-jekyll-partie-ii/&quot;&gt;Customize your Jekyll blog - Part II&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
@@ -902,8 +901,8 @@ $ npm install --save-dev imagemin-pngquant&lt;/code&gt;&lt;/pre&gt;&lt;/figure&g
 
 </description>
         <pubDate>Thu, 12 Nov 2015 09:00:00 +0100</pubDate>
-        <link>http://leblog.unpixel.fr/jekyll/blog/gulp/2015/11/12/better-jekyll-workflow-with-gulp.html</link>
-        <guid isPermaLink="true">http://leblog.unpixel.fr/jekyll/blog/gulp/2015/11/12/better-jekyll-workflow-with-gulp.html</guid>
+        <link>http://leblog.unpixel.fr/2015-11-maintenir-son-blog-jekyll-efficacement-avec-gulp/</link>
+        <guid isPermaLink="true">http://leblog.unpixel.fr/2015-11-maintenir-son-blog-jekyll-efficacement-avec-gulp/</guid>
         
         
         <category>jekyll</category>
@@ -915,14 +914,14 @@ $ npm install --save-dev imagemin-pngquant&lt;/code&gt;&lt;/pre&gt;&lt;/figure&g
       </item>
     
       <item>
-        <title>Build your own blog with Jekyll</title>
-        <description>&lt;p&gt;This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go through them:&lt;/p&gt;
+        <title>Créer votre blog avec Jekyll</title>
+        <description>&lt;p&gt;Ce tutoriel fait parti d’une série de tutoriels sur comment créer, maintenir et personnaliser un blog avec Jekyll. Si vous n’avez pas lu les tutoriels précédents, allez y jeter un oeil:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Build your own blog with Jekyll&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/gulp/2015/11/12/better-jekyll-workflow-with-gulp.html&quot;&gt;A better Jekyll workflow with gulp&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/sass/2015/11/13/customize-your-jekyll-blog-part-i.html&quot;&gt;Customize your Jekyll blog - Part I&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/jekyll/blog/sass/2015/11/14/customize-your-jekyll-blog-part-ii.html&quot;&gt;Customize your Jekyll blog - Part II&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-maintenir-son-blog-jekyll-efficacement-avec-gulp/&quot;&gt;A better Jekyll workflow with gulp&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-personnaliser-son-blog-jekyll-partie-i/&quot;&gt;Customize your Jekyll blog - Part I&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-personnaliser-son-blog-jekyll-partie-ii/&quot;&gt;Customize your Jekyll blog - Part II&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
@@ -1132,8 +1131,8 @@ layout: default
 
 </description>
         <pubDate>Wed, 11 Nov 2015 09:00:00 +0100</pubDate>
-        <link>http://leblog.unpixel.fr/jekyll/blog/github/2015/11/11/build-your-own-blog-with-jekyll.html</link>
-        <guid isPermaLink="true">http://leblog.unpixel.fr/jekyll/blog/github/2015/11/11/build-your-own-blog-with-jekyll.html</guid>
+        <link>http://leblog.unpixel.fr/2015-11-creer-votre-blog-avec-jekyll/</link>
+        <guid isPermaLink="true">http://leblog.unpixel.fr/2015-11-creer-votre-blog-avec-jekyll/</guid>
         
         
         <category>jekyll</category>
