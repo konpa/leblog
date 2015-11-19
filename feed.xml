@@ -5,8 +5,8 @@
     <description></description>
     <link>http://leblog.unpixel.fr/</link>
     <atom:link href="http://leblog.unpixel.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Nov 2015 10:22:42 +0100</pubDate>
-    <lastBuildDate>Tue, 17 Nov 2015 10:22:42 +0100</lastBuildDate>
+    <pubDate>Thu, 19 Nov 2015 11:15:29 +0100</pubDate>
+    <lastBuildDate>Thu, 19 Nov 2015 11:15:29 +0100</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -918,138 +918,138 @@ $ npm install --save-dev imagemin-pngquant&lt;/code&gt;&lt;/pre&gt;&lt;/figure&g
         <description>&lt;p&gt;Ce tutoriel fait parti d’une série de tutoriels sur comment créer, maintenir et personnaliser un blog avec Jekyll. Si vous n’avez pas lu les tutoriels précédents, allez y jeter un oeil:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Build your own blog with Jekyll&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2015-11-12-maintenir-son-blog-jekyll-efficacement-avec-gulp/&quot;&gt;A better Jekyll workflow with gulp&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2015-11-13-personnaliser-son-blog-jekyll-partie-i/&quot;&gt;Customize your Jekyll blog - Part I&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/&quot;&gt;Customize your Jekyll blog - Part II&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Créer votre blog avec Jekyll&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-12-maintenir-son-blog-jekyll-efficacement-avec-gulp/&quot;&gt;Maintenir son blog Jekyll efficacement avec Gulp&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-13-personnaliser-son-blog-jekyll-partie-i/&quot;&gt;Personnaliser son blog Jekyll - Partie I&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/&quot;&gt;Personnaliser son blog Jekyll - Partie II&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 
-&lt;p&gt;In this tutorial, I’ll show you how to:&lt;/p&gt;
+&lt;p&gt;Dans ce tutoriel, je vais vous montrer comment:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;build a blog with &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;,&lt;/li&gt;
-  &lt;li&gt;write our first blog post,&lt;/li&gt;
-  &lt;li&gt;add &lt;a href=&quot;https://disqus.com/&quot;&gt;disqus&lt;/a&gt; to our post,&lt;/li&gt;
-  &lt;li&gt;and finally, host it for free on github.&lt;/li&gt;
+  &lt;li&gt;créer un blog avec &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;,&lt;/li&gt;
+  &lt;li&gt;écrire notre permier article,&lt;/li&gt;
+  &lt;li&gt;ajouter un espace de commentaire à notre article avec &lt;a href=&quot;https://disqus.com/&quot;&gt;disqus&lt;/a&gt;,&lt;/li&gt;
+  &lt;li&gt;et enfin, l’héberger gratuitement sur &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;You can view or download the source files on the &lt;a href=&quot;https://github.com/konpa/jekyll-tutorial/tree/part-one&quot;&gt;Jekyll tutorial github repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Vous pouvez voir et télécharger les fichiers sources de ce tutoriel sur &lt;a href=&quot;https://github.com/konpa/jekyll-tutorial/tree/part-one&quot;&gt;son dépôt Github&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h1 id=&quot;building-a-blog-with-jekyll&quot;&gt;Building a blog with Jekyll&lt;/h1&gt;
+&lt;h1 id=&quot;crer-un-blog-avec-jekyll&quot;&gt;Créer un blog avec Jekyll&lt;/h1&gt;
 
-&lt;p&gt;Fist we need to install Jekyll on our computer.&lt;/p&gt;
+&lt;p&gt;Dans un premier temps, il faut installer Jekyll sur notre ordinateur.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;~ $ gem install jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now that Jekyll is installed, we can generate the blog.&lt;/p&gt;
+&lt;p&gt;Maintenant que Jekyll est installé, nous pouvons générer notre blog.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;~ $ jekyll new awesome-blog&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Then go into the generated folder and launch the Jekyll server.&lt;/p&gt;
+&lt;p&gt;Ensuite, déplacez-vous dans le nouveau dossier et lancez le serveur Jekyll.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;~ $ cd awesomeblog
 ~/awesome-blog $ jekyll serve&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now you can go to &lt;a href=&quot;http://127.0.0.1:4000/&quot;&gt;http://127.0.0.1:4000/&lt;/a&gt; and see your blog in action!&lt;/p&gt;
+&lt;p&gt;Vous pouvez vous rendre sur &lt;a href=&quot;http://127.0.0.1:4000/&quot;&gt;http://127.0.0.1:4000/&lt;/a&gt; et voir votre blog en action!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/1.png&quot; alt=&quot;Blog in action&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Now we want to customize it. All the config informations are in the &lt;code&gt;_config.yml&lt;/code&gt; file, located at the root of your folder. Let’s open it in our favorite editor and update it.&lt;/p&gt;
+&lt;p&gt;Il faut maintenant le personnaliser un peu. Toutes les configurations se trouvent dans le fichier &lt;code&gt;_config.yml&lt;/code&gt;, situé à la racine de votre projet. Ouvrons-le dans notre éditeur favori pour l’éditer.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Awesome Blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the title of our blog&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;awesomeguy@awesomesite.com&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# our email&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# breaf description of our blog&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Awesome Blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# le titre de votre blog&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;awesomeguy@awesomesite.com&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# votre email&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# petite desription du blog&lt;/span&gt;
   &lt;span class=&quot;no&quot;&gt;My awesome desciption.&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# we won&#39;t need to set that in our case&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://127.0.0.1:4000/&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# set it like this for now but we&#39;ll have to change this before to send it live&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;twitter_username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;awesome_guy&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# your twitter username&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;github_username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;awesome_guy&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# your github username (if you have one)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;s&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# nous verrons ça plus tard&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://127.0.0.1:4000/&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# en local, mais il faudra le changer avant de l&#39;envoyer en production&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;twitter_username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;awesome_guy&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# votre compte twitter&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;github_username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;awesome_guy&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# votre compte github&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;We are also going to get rid of the about page because we don’t need it. Simply delete the &lt;code&gt;about.md&lt;/code&gt; file in the root of your directory.&lt;/p&gt;
+&lt;p&gt;Nous allons supprimer la page “about” pour l’instant. Supprimer simplement le fichier &lt;code&gt;about.md&lt;/code&gt; à la racine de votre projet.&lt;/p&gt;
 
-&lt;p&gt;Stop and relaunch your &lt;code&gt;jekyll serve&lt;/code&gt; command and see the result!&lt;/p&gt;
+&lt;p&gt;Stoppez et relancez la commande &lt;code&gt;jekyll serve&lt;/code&gt; et regardez le résultat!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/2.png&quot; alt=&quot;Blog in action&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;That’s it for the first part! We’ll keep it simple for now and won’t customize the theme of our blog. But stay tuned, I’ll write another tutorial explaining how to do this soon ;)&lt;/p&gt;
+&lt;p&gt;C’est tout pour cette partie! Nous le garderons simple pour l’instant et ne personnaliserons pas plus notre blog. Mais restez attentif, un tutoriel expliquant comment faire ça arrivera bientôt ;)&lt;/p&gt;
 
-&lt;h1 id=&quot;writing-our-first-post&quot;&gt;Writing our first post&lt;/h1&gt;
+&lt;h1 id=&quot;ecrire-notre-premier-article&quot;&gt;Ecrire notre premier article&lt;/h1&gt;
 
-&lt;p&gt;First, we need to create the post file in the &lt;code&gt;_posts&lt;/code&gt; directory. Post file name needs to follow this convention &lt;code&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;, so name it like this &lt;code&gt;2015-11-13-our-first-awesome-post.md&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Premièrement, nous devons créer le fichier qui contiendra notre article dans le dossier &lt;code&gt;_posts&lt;/code&gt;. Les fichiers article doivent être nommé suivant la convention &lt;code&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;, nommez le donc comme suit &lt;code&gt;2015-11-13-our-first-awesome-post.md&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Now, open the file in your editor and add this at the beginning:&lt;/p&gt;
+&lt;p&gt;Maintenant, ouvrez ce fichier dans votre éditeur et insérez ceci au début:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the layout used to display the post&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;My&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Awesome&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;First&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Post&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# title of your post&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;s&quot;&gt;2015-11-13 09:00:00 +0100&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# date of your post&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll blog awesome&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# tags/categories of your post&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# le fichier utilisé pour générer la structure de votre article&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;My&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Awesome&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;First&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Post&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# le titre de votre article&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;s&quot;&gt;2015-11-13 09:00:00 +0100&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# date de publication&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll blog awesome&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# catégories de votre article&lt;/span&gt;
 &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This is an important part of your post, it won’t be displayed on the page but will be used by Jekyll while generating your blog, particularly when listing all the posts in the home page.&lt;/p&gt;
+&lt;p&gt;C’est une partie importante de votre article, elle ne sera pas visible dans votre article mais va permettre à Jekyll de générer votre article.&lt;/p&gt;
 
-&lt;p&gt;After this, you can begin to write your first awesome post using the &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;markdown&lt;/a&gt; syntax. I won’t go in details on writing markdown as you can find a lot of material explaining this. You could have a look at the &lt;a href=&quot;https://help.github.com/articles/markdown-basics/&quot;&gt;github help page for markdown&lt;/a&gt; for example.&lt;/p&gt;
+&lt;p&gt;Après cela, vous pouvez commencer à écrire votre premier article en utilisant la syntaxe &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;markdown&lt;/a&gt;. Je ne rentrerai pas les détails car un grand nombre de tutoriel/référence explique comment écrire en markdown.&lt;/p&gt;
 
-&lt;p&gt;I’ll just explain how to manage your post images that you want to store locally. You probably already know that to insert an image in your post you’ll use this syntax &lt;code&gt;![image title](http://image-url)&lt;/code&gt;. But if you store your images locally, you more likely use a relative url like this one &lt;code&gt;![image title](/img/image-name.jpg)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Je vais juste expliquer comment gérer les images de votre article que vous voulez stocker localement. Pour insérer une image dans votre article, il faut écrire &lt;code&gt;![image title](http://image-url)&lt;/code&gt;. Mais si votre image est stockée localement, il faudra utiliser un chemin relatif (ou absolu) de ce type &lt;code&gt;![image title](/img/image-name.jpg)&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;So we are going to create an &lt;code&gt;img&lt;/code&gt; folder at the root where we’ll store all our images. It will be automatically copied to the &lt;code&gt;_site&lt;/code&gt; folder (more on this at the last part of this tutorial).&lt;/p&gt;
+&lt;p&gt;Nous allons donc créer un dossier &lt;code&gt;img&lt;/code&gt; à la racine de notre projet qui contriendra toutes nos images. Ce dossier sera automatiquement copier dans le dossier &lt;code&gt;_site&lt;/code&gt; qui contient notre site en production.&lt;/p&gt;
 
-&lt;p&gt;Now you can add a local image to your post like this &lt;code&gt;![image title]({{ site.url }}/img/image-name.jpg)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Maintenant vous pouvez ajouter une image contenu dans ce dossier comme ceci &lt;code&gt;![image title]({{ site.url }}/img/image-name.jpg)&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/2-1.png&quot; alt=&quot;Blog in action&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;hosting-our-blog-on-github&quot;&gt;Hosting our blog on github&lt;/h1&gt;
+&lt;h1 id=&quot;hberger-notre-site-sur-github&quot;&gt;Héberger notre site sur Github&lt;/h1&gt;
 
-&lt;p&gt;Now that we know how to add content to our blog, we want to make it live so that we can share our awesome content with others.&lt;/p&gt;
+&lt;p&gt;Maintenant que nous avons ajouter du contenu à notre blog, nous voulons le mettre en ligne pour pouvoir le partager avec le monde entier.&lt;/p&gt;
 
-&lt;p&gt;Go to your &lt;a href=&quot;https://github.com&quot;&gt;github&lt;/a&gt; account and create a new repository.&lt;/p&gt;
+&lt;p&gt;Allez sur votre compte &lt;a href=&quot;https://github.com&quot;&gt;github&lt;/a&gt; et créer un nouveau dépôt (&lt;em&gt;repository&lt;/em&gt;).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/3.png&quot; alt=&quot;New repository&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Then copy the ssh url (or https if you prefer) of your new repository.&lt;/p&gt;
+&lt;p&gt;Et copiez le lien ssh (ou https) de votre dépôt.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/4.png&quot; alt=&quot;Copy url&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Now, open a terminal at the root of your blog project, go to the &lt;code&gt;_site&lt;/code&gt; folder and create a new git repository.&lt;/p&gt;
+&lt;p&gt;Maintenant, ouvrez votre console à la racine de votre projet, allez dans le dossier &lt;code&gt;_site&lt;/code&gt; et initialisez un nouveau dépôt git.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;~/awesome-blog $ cd _site/
 ~/awesome-blog/_site $ git init&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Add a remote to your git repository using the url that you copied earlier on github.&lt;/p&gt;
+&lt;p&gt;Ajouter le lien vers votre dépôt github que vous avez copié un peu plus tôt.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;~/awesome-blog $ git remote add origin git@github.com:username/repo-name.git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Update your site url in &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Mettez à jour l’adresse de votre site en production dans &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;username.github.io&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# You can find this url in the settings of your github repository&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;username.github.io/nom-du-dépôt&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Vous pouvez trouver cette adresse dans les paramètres de votre dépôt github&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;We now need to create the gh-pages branch and then our first commit.&lt;/p&gt;
+&lt;p&gt;Il faut maintenant créer la branche &lt;code&gt;gh-pages&lt;/code&gt; et ensuite enregistrez le tout dans un commit.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;~/awesome-blog $ git checkout -b gh-pages
 ~/awesome-blog $ git commit -a
 ~/awesome-blog $ git commit -m &quot;Our first awesome commit&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Finally, we push it to github.&lt;/p&gt;
+&lt;p&gt;Enfin, nous l’envoyons sur github.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;~/awesome-blog $ git push origin gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;You should now be able to see it live at http://username.github.io/blog!&lt;/p&gt;
+&lt;p&gt;Vous devriez maintenant voir votre site sur http://username.github.io/nom-du-dépôt!&lt;/p&gt;
 
-&lt;h1 id=&quot;adding-disqus-to-our-post&quot;&gt;Adding disqus to our post&lt;/h1&gt;
+&lt;h1 id=&quot;ajouter-une-section-commentaire-avec-disqus&quot;&gt;Ajouter une section commentaire avec Disqus&lt;/h1&gt;
 
-&lt;p&gt;Now that our post is live, we want to add the possibility for the reader to comment. We’ll use &lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt; for that.&lt;/p&gt;
+&lt;p&gt;Maintenant que notre site est en ligne, il serait bien de permettre aux lecteurs de réagir à vos articles. Pour cela, nous utiliserons &lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;First, &lt;a href=&quot;https://disqus.com/profile/signup/&quot;&gt;create an account&lt;/a&gt; and then &lt;a href=&quot;http://disqus.com/register&quot;&gt;register a new site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Dans un premier temps, &lt;a href=&quot;https://disqus.com/profile/signup/&quot;&gt;Créez-vous un compte&lt;/a&gt; et ensuite &lt;a href=&quot;http://disqus.com/register&quot;&gt;enregistrez un nouveau site&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/5.png&quot; alt=&quot;Register a new site&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;You should then be redirected on the installation page asking you to choose your platform. Choose Universal Code and copy the code of the first step.&lt;/p&gt;
+&lt;p&gt;Vous devriez être ensuite redirigé vers une page vous permettant de choisir votre plate-forme. Choisissez “Code universel” et copier le code de la première étape.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/6.png&quot; alt=&quot;Disqus installation&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Then we need to add this code to our post template file located at &lt;code&gt;_layouts/post.html&lt;/code&gt;. Open this file and add at the end of the &lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt; block the copied code between &lt;code&gt;{% if page.comments %}&lt;/code&gt; and &lt;code&gt;{% endif %}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Il faut maintenant ajouter ce code dans notre fichier template &lt;code&gt;_layouts/post.html&lt;/code&gt;. Ouvrez ce fichier et ajoutez juste avant la fin de votre balise &lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt; le code copier entre &lt;code&gt;{% if page.comments %}&lt;/code&gt; et &lt;code&gt;{% endif %}&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;---
 layout: default
@@ -1071,15 +1071,15 @@ layout: default
     {{ content }}
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 
-  &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Code to add begin here --&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Le code à ajouter commence ici --&amp;gt;&lt;/span&gt;
   {% if page.comments %}
-    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Paste the disqus code here --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Coller le code Disqus ici --&amp;gt;&lt;/span&gt;
   {% endif %}
-  &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Code to add end here --&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Le code à ajouter fini ici --&amp;gt;&lt;/span&gt;
 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;To make it more flexible, we’ll make some change to the disqus code.&lt;/p&gt;
+&lt;p&gt;Pour le rendre plus flexible, nous allons un peu modifier le code Disqus.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% if page.comments %}
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;disqus_thread&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
@@ -1103,31 +1103,31 @@ layout: default
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/noscript&amp;gt;&lt;/span&gt;
 {% endif %}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;And add the corresponding variable to our &lt;code&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Et ajouter les variables correspondantes dans notre fichier &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;disqus_shortname&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;awesomeblog&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;disqus_shortname&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;awesomeblog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# shortname de votre site entré sur Disqus&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now we just have to add &lt;code&gt;comments: true&lt;/code&gt; to the &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;front matter&lt;/a&gt; of our post and the disqus comment section will load automatically.&lt;/p&gt;
+&lt;p&gt;Maintenant il suffit d’ajouter un paramètre &lt;code&gt;comments: true&lt;/code&gt; à la section &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;front matter&lt;/a&gt; (à la suite du titre, de la date, etc) de notre article et la section commentaire Disqus sera chargée automatiquement.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/7.png&quot; alt=&quot;Disqus comment section&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Run &lt;code&gt;jekyll build&lt;/code&gt;, commit the changes, and push the &lt;code&gt;_site&lt;/code&gt; folder to github.&lt;/p&gt;
+&lt;p&gt;Lancez &lt;code&gt;jekyll build&lt;/code&gt;, créez un commit dans votre dossier &lt;code&gt;_site&lt;/code&gt;, et envoyez-le sur github.&lt;/p&gt;
 
-&lt;p&gt;That’s it for this tutorial. Stay tuned for next one.&lt;/p&gt;
+&lt;p&gt;C’est tout pour le moment… En attendant le prochain tutoriel!&lt;/p&gt;
 
-&lt;h1 id=&quot;bonus-redirect-your-custom-domain-name-to-your-blog&quot;&gt;Bonus: Redirect your custom domain name to your blog&lt;/h1&gt;
+&lt;h1 id=&quot;bonus-redirigez-votre-nom-de-domaine-vers-votre-blog&quot;&gt;Bonus: Redirigez votre nom de domaine vers votre blog&lt;/h1&gt;
 
-&lt;p&gt;If you own a custom domain name, you’ll probably want to redirect it to your blog. For example, you could redirect blog.yourdomain.com to your github page.&lt;/p&gt;
+&lt;p&gt;Si vous avez un nom de domaine, vous pouvez rediriger un sous domaine sur votre blog (ex: &lt;em&gt;blog.votredomain.com&lt;/em&gt;).&lt;/p&gt;
 
-&lt;p&gt;In order to do this, you first need to create a &lt;code&gt;CNAME&lt;/code&gt; file at the root of your project. Add one line containing your domain url. So in our case &lt;code&gt;blog.yourdomain.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Pour faire cela, vous devez commencer par créer un fichier &lt;code&gt;CNAME&lt;/code&gt; à la racine de votre projet et y ajouter une ligne contenant l’adresse de redirection (ex: &lt;code&gt;blog.yourdomain.com&lt;/code&gt;).&lt;/p&gt;
 
-&lt;p&gt;Commit the file and push it to github.&lt;/p&gt;
+&lt;p&gt;Enregistrez un commit et envoyez-le sur votre dépôt github.&lt;/p&gt;
 
-&lt;p&gt;Now, go to your registrar and update the DNS records of your domain name. Create a &lt;strong&gt;CNAME record&lt;/strong&gt; like this:&lt;/p&gt;
+&lt;p&gt;Maintenant, allez sur la page d’administration de votre nom de domaine et rendez-vous dans la section zone DNS. Créer un &lt;strong&gt;CNAME&lt;/strong&gt; comme suit:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/8.png&quot; alt=&quot;Create CNAME&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Wait a little and your subdomain should redirect to your blog. Don’t forget to update your site url in &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Attendez un peu et votre sous-domaine devrez rediriger vers votre blog. N’oubliez pas de mettre à jour votre nouvelle adresse dans le fichier &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 11 Nov 2015 09:00:00 +0100</pubDate>
