@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Maintenir son blog Jekyll efficacement avec Gulp</title>
-  <meta name="description" content="This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go throug...">
+  <meta name="description" content="Ce tutoriel fait parti d’une série de tutoriels sur comment créer, maintenir et personnaliser un blog avec Jekyll. Si vous n’avez pas lu les tutoriels précéd...">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://leblog.unpixel.fr/2015-11-12-maintenir-son-blog-jekyll-efficacement-avec-gulp/">
@@ -65,35 +65,35 @@
     </div>
 
     <div class="post-content single-post-content" itemprop="articleBody">
-      <p>This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go through them:</p>
+      <p>Ce tutoriel fait parti d’une série de tutoriels sur comment créer, maintenir et personnaliser un blog avec Jekyll. Si vous n’avez pas lu les tutoriels précédents, allez y jeter un oeil:</p>
 
 <ul>
-  <li><a href="/2015-11-11-creer-votre-blog-avec-jekyll/">Build your own blog with Jekyll</a></li>
-  <li>A better Jekyll workflow with gulp</li>
-  <li><a href="/2015-11-13-personnaliser-son-blog-jekyll-partie-i/">Customize your Jekyll blog - Part I</a></li>
-  <li><a href="/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/">Customize your Jekyll blog - Part II</a></li>
+  <li><a href="/2015-11-11-creer-votre-blog-avec-jekyll/">Créer votre blog avec Jekyll</a></li>
+  <li>Maintenir son blog Jekyll efficacement avec Gulp</li>
+  <li><a href="/2015-11-13-personnaliser-son-blog-jekyll-partie-i/">Personnaliser son blog Jekyll - Partie I</a></li>
+  <li><a href="/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/">Personnaliser son blog Jekyll - Partie II</a></li>
 </ul>
 
-<h1 id="summary">Summary</h1>
+<h1 id="introduction">Introduction</h1>
 
-<p>In this tutorial we will see how to maintain your Jekyll blog efficiently with <a href="http://gulpjs.com/">glup</a>. I will explain how to:</p>
+<p>Dans ce tutoriel, je vais vous montrer comment maintenir votre blog Jekyll efficacement avec <a href="http://gulpjs.com/">glup</a>. Nous allons voir comment:</p>
 
 <ul>
-  <li>reload your browser automatically each time you save changes</li>
-  <li>switch easily between local and production settings</li>
-  <li>magnify your images</li>
-  <li>deploy your blog updates easily</li>
+  <li>rafraichir votre navigateur automatiquement à chaque fois que vous sauvegarder des modifications</li>
+  <li>changer vos paramètres de production et de développement automatiquement</li>
+  <li>compresser vos images</li>
+  <li>deployer vos mises à jour facilement</li>
 </ul>
 
-<p>You can view or download the source files on the <a href="https://github.com/konpa/jekyll-tutorial/tree/part-two">Jekyll tutorial github repo</a>.</p>
+<p>Vous pouvez voir et télécharger les fichiers sources de ce tutoriel sur <a href="https://github.com/konpa/jekyll-tutorial/tree/part-two">son dépôt Github</a>.</p>
 
-<h1 id="automatic-browser-reload">Automatic browser reload</h1>
+<h1 id="rafraichissement-automatique-du-navigateur">Rafraichissement automatique du navigateur</h1>
 
-<p>In this part, we are going to make gulp watch our files, and when a change is saved, reload our browser in order to see the result directly without to do it manually.</p>
+<p>Ici, nous allons utiliser gulp pour surveiller nos fichiers, et, quand une modification sera enregistrée, il rafraichira notre navigateur afin de voir le résultat directement sans avoir à le faire manuellement.</p>
 
-<p>For this, we will use a <code>gulpfile.js</code> found on <a href="https://github.com/shakyShane/jekyll-gulp-sass-browser-sync">github</a> and wrote by <a href="https://github.com/shakyShane">@shakyShane</a> as a base that I’ll change a little for our needs.</p>
+<p>Pour cela, nous allons utiliser un fichier <code>gulpfile.js</code> trouvé sur le <a href="https://github.com/shakyShane/jekyll-gulp-sass-browser-sync">dépôt github</a> de <a href="https://github.com/shakyShane">@shakyShane</a> comme base que nous modifierons un peu pour nos besoins.</p>
 
-<p>Create a file called <code>package.json</code> like this:</p>
+<p>Créez un fichier <code>package.json</code> avec:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"browser-sync-jekyll"</span><span class="p">,</span><span class="w">
@@ -127,7 +127,7 @@
   </span><span class="nt">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/shakyShane/jekyll-gulp-sass-browser-sync"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<p>Then, create another file called <code>gulpfile.js</code> like this:</p>
+<p>Ensuite, créez un autre fichier <code>gulpfile.js</code> avec:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span>        <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">browserSync</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'browser-sync'</span><span class="p">);</span>
@@ -196,38 +196,38 @@
  */</span> 
 <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'default'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'browser-sync'</span><span class="p">,</span> <span class="s1">'watch'</span><span class="p">]);</span></code></pre></figure>
 
-<p>Now, install the dependencies with:</p>
+<p>Maintenant, installons les dépendances.</p>
 
 <figure class="highlight"><pre><code class="language-console" data-lang="console">$ npm install</code></pre></figure>
 
-<p>You should now see a new folder called <code>node_modules</code>.</p>
+<p>Vous devriez voir un nouveau dossier <code>node_modules</code>.</p>
 
-<p>Last step is to exclude this new files from the Jekyll build. So open your <code>_config.yml</code> file and add this line at the end:</p>
+<p>Enfin, ajouter ces nouveaux fichiers créés dans la section <code>exclude</code> de votre fichier de configuration <code>_config.yml</code>.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">exclude</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">node_modules"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">gulpfile.js"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">package.json"</span><span class="pi">]</span></code></pre></figure>
 
-<p>As we now user gulp-sass to generate our final css file, we’ll also need to remove those first 3 lines of our <code>css/main.scss</code> to prevent an error when compiling.</p>
+<p>Comme nous utilisons maintenant <code>gulp-sass</code> pour générer notre fichier css final, il faut supprimer les 3 premières lignes de notre fichier <code>css/main.scss</code> pour éviter une erreur lors de sa compilation.</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">---</span>
 <span class="nn">#</span> <span class="nt">Only</span> <span class="nt">the</span> <span class="nt">main</span> <span class="nt">Sass</span> <span class="nt">file</span> <span class="nt">needs</span> <span class="nt">front</span> <span class="nt">matter</span> <span class="o">(</span><span class="nt">the</span> <span class="nt">dashes</span> <span class="nt">are</span> <span class="nt">enough</span><span class="o">)</span>
 <span class="nt">---</span></code></pre></figure>
 
-<p>That’s it! You now just have to fire <code>gulp</code> in your terminal. A new tab will open automatically and will update automatically as well when you save changes in your files. Try it by making some changes to the <code>_sass/_base.scss</code> file or the <code>index.html</code> file.</p>
+<p>Et voilà! Plus qu’à lancer la commande <code>gulp</code> dans votre terminal. Un nouvel onglet va s’ouvrir et se mettra à jour automatiquement quand vous sauvegarderez vos modifications. Essayez en modifiant votre fichier <code>_sass/_base.scss</code> ou <code>index.html</code>.</p>
 
 <p><img src="http://leblog.unpixel.fr/img/13.png" alt="Automatic reloading" /></p>
 
-<h1 id="switch-easily-between-local-and-production">Switch easily between local and production</h1>
+<h1 id="changer-facilement-denvironnement-localproduction">Changer facilement d’environnement (local/production)</h1>
 
-<p>When working locally on your computer, you need to set your <code>site.url</code> like <strong>http://localhost:3000</strong>. But before to deploy your blog on github you need to update the <code>site.url</code> with your production url like <strong>http://mydomain.com</strong>. This can become very annoying. So we’re going to fix this.</p>
+<p>Quand vous travaillez localement sur votre ordinateur, il faut paramètrer <code>site.url</code> de cette façon <strong>http://localhost:3000</strong>. Avant d’envoyer vos modifications en production il faut mettre à jour <code>site.url</code> avec l’adresse de votre site en production (<strong>http://blog.mondomaine.com</strong>). Ceci peut vite devenir génant. Nous allons donc contourner ce problème.</p>
 
-<p>Create a new file called <code>_config_dev.yml</code> at the root of your project with two lines:</p>
+<p>Créez un nouveau fichier <code>_config_dev.yml</code> à la racine de votre projet contenant ces deux lignes:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
 <span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://localhost:3000/"</span></code></pre></figure>
 
-<p>The two same lines in your <code>_config.yml</code> should be set with your production settings.</p>
+<p>Et changer les deux mêmes lignes dans <code>_config.yml</code> avec vos paramètres de production.</p>
 
-<p>Now, we will update our <code>gulpfile.js</code> so that Jekyll use our two config files. Open it and change the <code>jekyll-build</code> task like this:</p>
+<p>Maintenant, nous allons mettre à jour notre fichier <code>gulpfile.js</code> pour que Jekyll prenne en compte ces deux fichiers de configuration. Ouvrez-le et modifiez la tâche <code>jekyll-build</code> comme suit:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**
  * Build the Jekyll Site
@@ -238,26 +238,27 @@
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'close'</span><span class="p">,</span> <span class="nx">done</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Done! Now you won’t have to bother anymore switching manually between local and production url.</p>
+<p>C’est tout. Maintenant vous n’aurez plus à changer votre <code>site.url</code> à chaque fois.</p>
 
-<h1 id="images-magnification">Images magnification</h1>
+<h1 id="compression-des-images">Compression des images</h1>
 
-<p>To magnify our images we will use the <a href="https://github.com/sindresorhus/gulp-imagemin">gulp-imagemin</a> plugin made by <a href="https://github.com/sindresorhus">@sindresorhus</a>.</p>
+<p>To magnify our images we will use the <a href="https://github.com/sindresorhus/gulp-imagemin">gulp-imagemin</a> plugin made by <a href="https://github.com/sindresorhus">@sindresorhus</a>.
+Pour compresser nos images, nous allons utiliser le plugin <a href="https://github.com/sindresorhus/gulp-imagemin">gulp-imagemin</a> écrit par <a href="https://github.com/sindresorhus">@sindresorhus</a>.</p>
 
-<p>First we have to install the plugin.</p>
+<p>Dans un premier temps, il faut l’installer.</p>
 
 <figure class="highlight"><pre><code class="language-console" data-lang="console">$ npm install --save-dev gulp-imagemin
 $ npm install --save-dev imagemin-pngquant</code></pre></figure>
 
-<p>Then, add those lines to your <code>gulpfile.js</code>:</p>
+<p>Ensuite, ajoutez ces lignes à votre <code>gulpfile.js</code>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">imagemin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-imagemin'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">pngquant</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'imagemin-pngquant'</span><span class="p">);</span>
 
 <span class="cm">/**
- * Image magnification
+ * Minify Images
  */</span> 
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'image-magnification'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'minify-images'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./_images/*'</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">imagemin</span><span class="p">({</span>
             <span class="na">progressive</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -267,20 +268,20 @@ $ npm install --save-dev imagemin-pngquant</code></pre></figure>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./img/'</span><span class="p">));</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Now update the <code>jekyll-build</code> task so it launches the <code>image-magnification</code> task before.</p>
+<p>Maintenant, mettez à jour la tâche <code>jekyll-build</code> pour qu’elle lance la tâche <code>minify-images</code> avant.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**
  * Build the Jekyll Site
  */</span> 
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'jekyll-build'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'image-magnification'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'jekyll-build'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'minify-images'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">browserSync</span><span class="p">.</span><span class="nx">notify</span><span class="p">(</span><span class="nx">messages</span><span class="p">.</span><span class="nx">jekyllBuild</span><span class="p">);</span>
     <span class="k">return</span> <span class="nx">cp</span><span class="p">.</span><span class="nx">spawn</span><span class="p">(</span><span class="s1">'jekyll'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'build'</span><span class="p">,</span> <span class="s1">'--config'</span><span class="p">,</span> <span class="s1">'_config.yml,_config_dev.yml'</span><span class="p">],</span> <span class="p">{</span><span class="na">stdio</span><span class="p">:</span> <span class="s1">'inherit'</span><span class="p">})</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'close'</span><span class="p">,</span> <span class="nx">done</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Create an <code>_images</code> folder where you will store your new un-magnified images. Don’t put them anymore on the <code>img</code> folder, it is now only a transition folder.</p>
+<p>Créez un dossier <code>_images</code> où vous stockerez vos fichiers sources. Ne les mettez plus dans le dossier <code>img</code> qui ne sera plus maintenant qu’un dossier de transition.</p>
 
-<p>Finally, update your gulp watch task so that it watches your <code>_images</code> folder.</p>
+<p>Enfin, mettez à jour votre tâche gulp <code>watch</code> pour qu’elle surveille notre nouveau dossier <code>_images</code>.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**
  * Watch scss files for changes &amp; recompile
@@ -291,15 +292,15 @@ $ npm install --save-dev imagemin-pngquant</code></pre></figure>
     <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">([</span><span class="s1">'*.html'</span><span class="p">,</span> <span class="s1">'_layouts/*.html'</span><span class="p">,</span> <span class="s1">'_includes/*.html'</span><span class="p">,</span> <span class="s1">'_posts/*'</span><span class="p">,</span> <span class="s1">'_config.yml'</span><span class="p">,</span> <span class="s1">'_images/*'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'jekyll-rebuild'</span><span class="p">]);</span>
 <span class="p">});</span></code></pre></figure>
 
-<h1 id="deploy-on-github">Deploy on github</h1>
+<h1 id="dploiement-sur-github">Déploiement sur github</h1>
 
-<p>To automate our github deploy, we will use the <a href="https://github.com/sun-zheng-an/gulp-shell">gulp-shell</a> plugin made by <a href="https://github.com/sun-zheng-an">@sun-zheng-an</a>.</p>
+<p>Pour automatiser notre déploiement sur github, nous allons utiliser le plugin <a href="https://github.com/sun-zheng-an/gulp-shell">gulp-shell</a> écrit par <a href="https://github.com/sun-zheng-an">@sun-zheng-an</a>.</p>
 
-<p>First, install the plugin.</p>
+<p>Pour commencer, insallez le plugin.</p>
 
 <figure class="highlight"><pre><code class="language-console" data-lang="console">$ npm install --save-dev gulp-shell</code></pre></figure>
 
-<p>And add those lines to your <code>gulpfile.js</code>:</p>
+<p>Ajoutez ces lignes à votre fichier <code>gulpfile.js</code>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">shell</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-shell'</span><span class="p">);</span>
 
@@ -307,20 +308,20 @@ $ npm install --save-dev imagemin-pngquant</code></pre></figure>
   <span class="s1">'cd _site/ &amp;&amp; git add --all &amp;&amp; git commit -m "update blog" &amp;&amp; git push origin gh-pages'</span>
 <span class="p">]));</span></code></pre></figure>
 
-<p>Because we added our <code>_config_dev.yml</code> file to the Jekyll build task, we also have to add a task for building our production blog without this file.</p>
+<p>Comme nous avons ajouter le fichier <code>_config_dev.yml</code> à notre tâche <code>jekyll-build</code>, nous devons créer une autre tâche qui ne prendra pas en compte ce fichier pour construire notre site final avant déploiement.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**
  * Build the Jekyll Site for production
  */</span> 
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'jekyll-build-prod'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'image-magnification'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'jekyll-build-prod'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'minify-images'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">browserSync</span><span class="p">.</span><span class="nx">notify</span><span class="p">(</span><span class="nx">messages</span><span class="p">.</span><span class="nx">jekyllBuild</span><span class="p">);</span>
     <span class="k">return</span> <span class="nx">cp</span><span class="p">.</span><span class="nx">spawn</span><span class="p">(</span><span class="s1">'jekyll'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'build'</span><span class="p">],</span> <span class="p">{</span><span class="na">stdio</span><span class="p">:</span> <span class="s1">'inherit'</span><span class="p">})</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'close'</span><span class="p">,</span> <span class="nx">done</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Now, you just have to fire <code>gulp deploy</code> on your terminal to update your blog.</p>
+<p>Maintenat, vous n’avez plus qu’à lancer la commande <code>gulp deploy</code> dans votre terminal pour mettre à jour votre blog.</p>
 
-<p>That’s it for this tutorial. Stay tuned for next one.</p>
+<p>C’est tout pour le moment… En attendant le prochain tutoriel!</p>
 
 
     </div>

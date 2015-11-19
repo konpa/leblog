@@ -5,8 +5,8 @@
     <description></description>
     <link>http://leblog.unpixel.fr/</link>
     <atom:link href="http://leblog.unpixel.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Nov 2015 11:15:29 +0100</pubDate>
-    <lastBuildDate>Thu, 19 Nov 2015 11:15:29 +0100</lastBuildDate>
+    <pubDate>Thu, 19 Nov 2015 22:05:47 +0100</pubDate>
+    <lastBuildDate>Thu, 19 Nov 2015 22:05:47 +0100</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -642,35 +642,35 @@ layout: default
     
       <item>
         <title>Maintenir son blog Jekyll efficacement avec Gulp</title>
-        <description>&lt;p&gt;This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go through them:&lt;/p&gt;
+        <description>&lt;p&gt;Ce tutoriel fait parti d’une série de tutoriels sur comment créer, maintenir et personnaliser un blog avec Jekyll. Si vous n’avez pas lu les tutoriels précédents, allez y jeter un oeil:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/2015-11-11-creer-votre-blog-avec-jekyll/&quot;&gt;Build your own blog with Jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;A better Jekyll workflow with gulp&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2015-11-13-personnaliser-son-blog-jekyll-partie-i/&quot;&gt;Customize your Jekyll blog - Part I&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/&quot;&gt;Customize your Jekyll blog - Part II&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-11-creer-votre-blog-avec-jekyll/&quot;&gt;Créer votre blog avec Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Maintenir son blog Jekyll efficacement avec Gulp&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-13-personnaliser-son-blog-jekyll-partie-i/&quot;&gt;Personnaliser son blog Jekyll - Partie I&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/&quot;&gt;Personnaliser son blog Jekyll - Partie II&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 
-&lt;p&gt;In this tutorial we will see how to maintain your Jekyll blog efficiently with &lt;a href=&quot;http://gulpjs.com/&quot;&gt;glup&lt;/a&gt;. I will explain how to:&lt;/p&gt;
+&lt;p&gt;Dans ce tutoriel, je vais vous montrer comment maintenir votre blog Jekyll efficacement avec &lt;a href=&quot;http://gulpjs.com/&quot;&gt;glup&lt;/a&gt;. Nous allons voir comment:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;reload your browser automatically each time you save changes&lt;/li&gt;
-  &lt;li&gt;switch easily between local and production settings&lt;/li&gt;
-  &lt;li&gt;magnify your images&lt;/li&gt;
-  &lt;li&gt;deploy your blog updates easily&lt;/li&gt;
+  &lt;li&gt;rafraichir votre navigateur automatiquement à chaque fois que vous sauvegarder des modifications&lt;/li&gt;
+  &lt;li&gt;changer vos paramètres de production et de développement automatiquement&lt;/li&gt;
+  &lt;li&gt;compresser vos images&lt;/li&gt;
+  &lt;li&gt;deployer vos mises à jour facilement&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;You can view or download the source files on the &lt;a href=&quot;https://github.com/konpa/jekyll-tutorial/tree/part-two&quot;&gt;Jekyll tutorial github repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Vous pouvez voir et télécharger les fichiers sources de ce tutoriel sur &lt;a href=&quot;https://github.com/konpa/jekyll-tutorial/tree/part-two&quot;&gt;son dépôt Github&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h1 id=&quot;automatic-browser-reload&quot;&gt;Automatic browser reload&lt;/h1&gt;
+&lt;h1 id=&quot;rafraichissement-automatique-du-navigateur&quot;&gt;Rafraichissement automatique du navigateur&lt;/h1&gt;
 
-&lt;p&gt;In this part, we are going to make gulp watch our files, and when a change is saved, reload our browser in order to see the result directly without to do it manually.&lt;/p&gt;
+&lt;p&gt;Ici, nous allons utiliser gulp pour surveiller nos fichiers, et, quand une modification sera enregistrée, il rafraichira notre navigateur afin de voir le résultat directement sans avoir à le faire manuellement.&lt;/p&gt;
 
-&lt;p&gt;For this, we will use a &lt;code&gt;gulpfile.js&lt;/code&gt; found on &lt;a href=&quot;https://github.com/shakyShane/jekyll-gulp-sass-browser-sync&quot;&gt;github&lt;/a&gt; and wrote by &lt;a href=&quot;https://github.com/shakyShane&quot;&gt;@shakyShane&lt;/a&gt; as a base that I’ll change a little for our needs.&lt;/p&gt;
+&lt;p&gt;Pour cela, nous allons utiliser un fichier &lt;code&gt;gulpfile.js&lt;/code&gt; trouvé sur le &lt;a href=&quot;https://github.com/shakyShane/jekyll-gulp-sass-browser-sync&quot;&gt;dépôt github&lt;/a&gt; de &lt;a href=&quot;https://github.com/shakyShane&quot;&gt;@shakyShane&lt;/a&gt; comme base que nous modifierons un peu pour nos besoins.&lt;/p&gt;
 
-&lt;p&gt;Create a file called &lt;code&gt;package.json&lt;/code&gt; like this:&lt;/p&gt;
+&lt;p&gt;Créez un fichier &lt;code&gt;package.json&lt;/code&gt; avec:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;browser-sync-jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -704,7 +704,7 @@ layout: default
   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;homepage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/shakyShane/jekyll-gulp-sass-browser-sync&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Then, create another file called &lt;code&gt;gulpfile.js&lt;/code&gt; like this:&lt;/p&gt;
+&lt;p&gt;Ensuite, créez un autre fichier &lt;code&gt;gulpfile.js&lt;/code&gt; avec:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;gulp&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;browser-sync&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -773,38 +773,38 @@ layout: default
  */&lt;/span&gt; 
 &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;default&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;browser-sync&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;watch&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now, install the dependencies with:&lt;/p&gt;
+&lt;p&gt;Maintenant, installons les dépendances.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;$ npm install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;You should now see a new folder called &lt;code&gt;node_modules&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Vous devriez voir un nouveau dossier &lt;code&gt;node_modules&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Last step is to exclude this new files from the Jekyll build. So open your &lt;code&gt;_config.yml&lt;/code&gt; file and add this line at the end:&lt;/p&gt;
+&lt;p&gt;Enfin, ajouter ces nouveaux fichiers créés dans la section &lt;code&gt;exclude&lt;/code&gt; de votre fichier de configuration &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;node_modules&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;gulpfile.js&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;package.json&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;As we now user gulp-sass to generate our final css file, we’ll also need to remove those first 3 lines of our &lt;code&gt;css/main.scss&lt;/code&gt; to prevent an error when compiling.&lt;/p&gt;
+&lt;p&gt;Comme nous utilisons maintenant &lt;code&gt;gulp-sass&lt;/code&gt; pour générer notre fichier css final, il faut supprimer les 3 premières lignes de notre fichier &lt;code&gt;css/main.scss&lt;/code&gt; pour éviter une erreur lors de sa compilation.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
 &lt;span class=&quot;nn&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;Only&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;Sass&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;needs&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;front&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;matter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;dashes&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;enough&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;That’s it! You now just have to fire &lt;code&gt;gulp&lt;/code&gt; in your terminal. A new tab will open automatically and will update automatically as well when you save changes in your files. Try it by making some changes to the &lt;code&gt;_sass/_base.scss&lt;/code&gt; file or the &lt;code&gt;index.html&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Et voilà! Plus qu’à lancer la commande &lt;code&gt;gulp&lt;/code&gt; dans votre terminal. Un nouvel onglet va s’ouvrir et se mettra à jour automatiquement quand vous sauvegarderez vos modifications. Essayez en modifiant votre fichier &lt;code&gt;_sass/_base.scss&lt;/code&gt; ou &lt;code&gt;index.html&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/13.png&quot; alt=&quot;Automatic reloading&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;switch-easily-between-local-and-production&quot;&gt;Switch easily between local and production&lt;/h1&gt;
+&lt;h1 id=&quot;changer-facilement-denvironnement-localproduction&quot;&gt;Changer facilement d’environnement (local/production)&lt;/h1&gt;
 
-&lt;p&gt;When working locally on your computer, you need to set your &lt;code&gt;site.url&lt;/code&gt; like &lt;strong&gt;http://localhost:3000&lt;/strong&gt;. But before to deploy your blog on github you need to update the &lt;code&gt;site.url&lt;/code&gt; with your production url like &lt;strong&gt;http://mydomain.com&lt;/strong&gt;. This can become very annoying. So we’re going to fix this.&lt;/p&gt;
+&lt;p&gt;Quand vous travaillez localement sur votre ordinateur, il faut paramètrer &lt;code&gt;site.url&lt;/code&gt; de cette façon &lt;strong&gt;http://localhost:3000&lt;/strong&gt;. Avant d’envoyer vos modifications en production il faut mettre à jour &lt;code&gt;site.url&lt;/code&gt; avec l’adresse de votre site en production (&lt;strong&gt;http://blog.mondomaine.com&lt;/strong&gt;). Ceci peut vite devenir génant. Nous allons donc contourner ce problème.&lt;/p&gt;
 
-&lt;p&gt;Create a new file called &lt;code&gt;_config_dev.yml&lt;/code&gt; at the root of your project with two lines:&lt;/p&gt;
+&lt;p&gt;Créez un nouveau fichier &lt;code&gt;_config_dev.yml&lt;/code&gt; à la racine de votre projet contenant ces deux lignes:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://localhost:3000/&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The two same lines in your &lt;code&gt;_config.yml&lt;/code&gt; should be set with your production settings.&lt;/p&gt;
+&lt;p&gt;Et changer les deux mêmes lignes dans &lt;code&gt;_config.yml&lt;/code&gt; avec vos paramètres de production.&lt;/p&gt;
 
-&lt;p&gt;Now, we will update our &lt;code&gt;gulpfile.js&lt;/code&gt; so that Jekyll use our two config files. Open it and change the &lt;code&gt;jekyll-build&lt;/code&gt; task like this:&lt;/p&gt;
+&lt;p&gt;Maintenant, nous allons mettre à jour notre fichier &lt;code&gt;gulpfile.js&lt;/code&gt; pour que Jekyll prenne en compte ces deux fichiers de configuration. Ouvrez-le et modifiez la tâche &lt;code&gt;jekyll-build&lt;/code&gt; comme suit:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/**
  * Build the Jekyll Site
@@ -815,26 +815,27 @@ layout: default
         &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;close&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Done! Now you won’t have to bother anymore switching manually between local and production url.&lt;/p&gt;
+&lt;p&gt;C’est tout. Maintenant vous n’aurez plus à changer votre &lt;code&gt;site.url&lt;/code&gt; à chaque fois.&lt;/p&gt;
 
-&lt;h1 id=&quot;images-magnification&quot;&gt;Images magnification&lt;/h1&gt;
+&lt;h1 id=&quot;compression-des-images&quot;&gt;Compression des images&lt;/h1&gt;
 
-&lt;p&gt;To magnify our images we will use the &lt;a href=&quot;https://github.com/sindresorhus/gulp-imagemin&quot;&gt;gulp-imagemin&lt;/a&gt; plugin made by &lt;a href=&quot;https://github.com/sindresorhus&quot;&gt;@sindresorhus&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To magnify our images we will use the &lt;a href=&quot;https://github.com/sindresorhus/gulp-imagemin&quot;&gt;gulp-imagemin&lt;/a&gt; plugin made by &lt;a href=&quot;https://github.com/sindresorhus&quot;&gt;@sindresorhus&lt;/a&gt;.
+Pour compresser nos images, nous allons utiliser le plugin &lt;a href=&quot;https://github.com/sindresorhus/gulp-imagemin&quot;&gt;gulp-imagemin&lt;/a&gt; écrit par &lt;a href=&quot;https://github.com/sindresorhus&quot;&gt;@sindresorhus&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;First we have to install the plugin.&lt;/p&gt;
+&lt;p&gt;Dans un premier temps, il faut l’installer.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;$ npm install --save-dev gulp-imagemin
 $ npm install --save-dev imagemin-pngquant&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Then, add those lines to your &lt;code&gt;gulpfile.js&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Ensuite, ajoutez ces lignes à votre &lt;code&gt;gulpfile.js&lt;/code&gt;:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;imagemin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;gulp-imagemin&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pngquant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;imagemin-pngquant&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 &lt;span class=&quot;cm&quot;&gt;/**
- * Image magnification
+ * Minify Images
  */&lt;/span&gt; 
-&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;image-magnification&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;minify-images&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;./_images/*&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imagemin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
             &lt;span class=&quot;na&quot;&gt;progressive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -844,20 +845,20 @@ $ npm install --save-dev imagemin-pngquant&lt;/code&gt;&lt;/pre&gt;&lt;/figure&g
         &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;./img/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now update the &lt;code&gt;jekyll-build&lt;/code&gt; task so it launches the &lt;code&gt;image-magnification&lt;/code&gt; task before.&lt;/p&gt;
+&lt;p&gt;Maintenant, mettez à jour la tâche &lt;code&gt;jekyll-build&lt;/code&gt; pour qu’elle lance la tâche &lt;code&gt;minify-images&lt;/code&gt; avant.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/**
  * Build the Jekyll Site
  */&lt;/span&gt; 
-&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;jekyll-build&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;image-magnification&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;jekyll-build&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;minify-images&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;notify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;messages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jekyllBuild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;spawn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;jekyll&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;build&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;--config&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;_config.yml,_config_dev.yml&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stdio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;inherit&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;close&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Create an &lt;code&gt;_images&lt;/code&gt; folder where you will store your new un-magnified images. Don’t put them anymore on the &lt;code&gt;img&lt;/code&gt; folder, it is now only a transition folder.&lt;/p&gt;
+&lt;p&gt;Créez un dossier &lt;code&gt;_images&lt;/code&gt; où vous stockerez vos fichiers sources. Ne les mettez plus dans le dossier &lt;code&gt;img&lt;/code&gt; qui ne sera plus maintenant qu’un dossier de transition.&lt;/p&gt;
 
-&lt;p&gt;Finally, update your gulp watch task so that it watches your &lt;code&gt;_images&lt;/code&gt; folder.&lt;/p&gt;
+&lt;p&gt;Enfin, mettez à jour votre tâche gulp &lt;code&gt;watch&lt;/code&gt; pour qu’elle surveille notre nouveau dossier &lt;code&gt;_images&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/**
  * Watch scss files for changes &amp;amp; recompile
@@ -868,15 +869,15 @@ $ npm install --save-dev imagemin-pngquant&lt;/code&gt;&lt;/pre&gt;&lt;/figure&g
     &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;*.html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;_layouts/*.html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;_includes/*.html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;_posts/*&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;_config.yml&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;_images/*&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;jekyll-rebuild&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h1 id=&quot;deploy-on-github&quot;&gt;Deploy on github&lt;/h1&gt;
+&lt;h1 id=&quot;dploiement-sur-github&quot;&gt;Déploiement sur github&lt;/h1&gt;
 
-&lt;p&gt;To automate our github deploy, we will use the &lt;a href=&quot;https://github.com/sun-zheng-an/gulp-shell&quot;&gt;gulp-shell&lt;/a&gt; plugin made by &lt;a href=&quot;https://github.com/sun-zheng-an&quot;&gt;@sun-zheng-an&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pour automatiser notre déploiement sur github, nous allons utiliser le plugin &lt;a href=&quot;https://github.com/sun-zheng-an/gulp-shell&quot;&gt;gulp-shell&lt;/a&gt; écrit par &lt;a href=&quot;https://github.com/sun-zheng-an&quot;&gt;@sun-zheng-an&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;First, install the plugin.&lt;/p&gt;
+&lt;p&gt;Pour commencer, insallez le plugin.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;$ npm install --save-dev gulp-shell&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;And add those lines to your &lt;code&gt;gulpfile.js&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Ajoutez ces lignes à votre fichier &lt;code&gt;gulpfile.js&lt;/code&gt;:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;shell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;gulp-shell&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
@@ -884,20 +885,20 @@ $ npm install --save-dev imagemin-pngquant&lt;/code&gt;&lt;/pre&gt;&lt;/figure&g
   &lt;span class=&quot;s1&quot;&gt;&#39;cd _site/ &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &quot;update blog&quot; &amp;amp;&amp;amp; git push origin gh-pages&#39;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;]));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Because we added our &lt;code&gt;_config_dev.yml&lt;/code&gt; file to the Jekyll build task, we also have to add a task for building our production blog without this file.&lt;/p&gt;
+&lt;p&gt;Comme nous avons ajouter le fichier &lt;code&gt;_config_dev.yml&lt;/code&gt; à notre tâche &lt;code&gt;jekyll-build&lt;/code&gt;, nous devons créer une autre tâche qui ne prendra pas en compte ce fichier pour construire notre site final avant déploiement.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/**
  * Build the Jekyll Site for production
  */&lt;/span&gt; 
-&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;jekyll-build-prod&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;image-magnification&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;jekyll-build-prod&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;minify-images&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;notify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;messages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jekyllBuild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;spawn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;jekyll&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;build&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stdio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;inherit&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;close&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now, you just have to fire &lt;code&gt;gulp deploy&lt;/code&gt; on your terminal to update your blog.&lt;/p&gt;
+&lt;p&gt;Maintenat, vous n’avez plus qu’à lancer la commande &lt;code&gt;gulp deploy&lt;/code&gt; dans votre terminal pour mettre à jour votre blog.&lt;/p&gt;
 
-&lt;p&gt;That’s it for this tutorial. Stay tuned for next one.&lt;/p&gt;
+&lt;p&gt;C’est tout pour le moment… En attendant le prochain tutoriel!&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 12 Nov 2015 09:00:00 +0100</pubDate>
