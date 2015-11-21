@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Personnaliser son blog Jekyll - Partie I</title>
-  <meta name="description" content="This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go throug...">
+  <meta name="description" content="Ce tutoriel fait parti d’une série de tutoriels sur comment créer, maintenir et personnaliser un blog avec Jekyll. Si vous n’avez pas lu les tutoriels précéd...">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://leblog.unpixel.fr/2015-11-13-personnaliser-son-blog-jekyll-partie-i/">
@@ -65,26 +65,26 @@
     </div>
 
     <div class="post-content single-post-content" itemprop="articleBody">
-      <p>This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go through them:</p>
+      <p>Ce tutoriel fait parti d’une série de tutoriels sur comment créer, maintenir et personnaliser un blog avec Jekyll. Si vous n’avez pas lu les tutoriels précédents, allez y jeter un oeil:</p>
 
 <ul>
-  <li><a href="/2015-11-11-creer-votre-blog-avec-jekyll/">Build your own blog with Jekyll</a></li>
-  <li><a href="/2015-11-12-maintenir-son-blog-jekyll-efficacement-avec-gulp/">A better Jekyll workflow with gulp</a></li>
-  <li>Customize your Jekyll blog - Part I</li>
-  <li><a href="/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/">Customize your Jekyll blog - Part II</a></li>
+  <li><a href="/2015-11-11-creer-votre-blog-avec-jekyll/">Créer votre blog avec Jekyll</a></li>
+  <li><a href="/2015-11-12-maintenir-son-blog-jekyll-efficacement-avec-gulp/">Maintenir son blog Jekyll efficacement avec Gulp</a></li>
+  <li>Personnaliser son blog Jekyll - Partie I</li>
+  <li><a href="/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/">Personnaliser son blog Jekyll - Partie II</a></li>
 </ul>
 
-<p>You can view or download the source files on the <a href="https://github.com/konpa/jekyll-tutorial/tree/part-three">Jekyll tutorial github repo</a>.</p>
+<p>Vous pouvez voir et télécharger les fichiers sources de ce tutoriel sur <a href="https://github.com/konpa/jekyll-tutorial/tree/part-three">son dépôt Github</a>.</p>
 
-<h1 id="set-up">Set up</h1>
+<h1 id="mise-en-place">Mise en place</h1>
 
-<p>Let’s begin by adding a <code>_theme.scss</code> file in our <code>_sass</code> folder where we will write all the style of our new Jekyll theme.</p>
+<p>Commençons par ajouter un fichier <code>_theme.scss</code> dans notre dossier <code>_sass</code> où nous écrirons toutes les règles de style pour notre thème Jekyll.</p>
 
-<p>Update the <code>@import</code> part of the <code>css/main.scss</code> file like this:</p>
+<p>Mettez à jour la partie <code>@import</code> du fichier <code>css/main.scss</code> comme ceci:</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@import</span> <span class="s2">"base"</span><span class="o">,</span> <span class="s2">"layout"</span><span class="o">,</span> <span class="s2">"syntax-highlighting"</span><span class="o">,</span> <span class="s2">"theme"</span><span class="p">;</span></code></pre></figure>
 
-<p>In order to keep the margin right, we have to make a small change to the <code>_sass/_base.scss</code> on the <code>Set margin-bottom to maintain vertical rhythm</code> section. Replace it by:</p>
+<p>Afin de garder un espacement correcte, il faut faire une petite mise à jour dans le fichier <code>_sass/_base.scss</code> dans la partie <code>Set margin-bottom to maintain vertical rhythm</code>. Remplacez la par:</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span><span class="o">,</span> <span class="nt">p</span><span class="o">,</span> <span class="nt">blockquote</span><span class="o">,</span> <span class="nt">pre</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">dl</span><span class="o">,</span> <span class="nt">figure</span> <span class="p">{</span>     
   <span class="nl">margin-bottom</span><span class="p">:</span> <span class="nv">$spacing-unit</span> <span class="o">/</span> <span class="m">2</span><span class="p">;</span>
@@ -93,7 +93,7 @@
   <span class="nl">margin-bottom</span><span class="p">:</span> <span class="nv">$spacing-unit</span> <span class="o">/</span> <span class="m">2</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Finally, we’ll change the font in the <code>css/main.scss</code> file by adding two <a href="https://www.google.com/fonts">google fonts</a>.</p>
+<p>Enfin, changeons la police de caractères dans <code>css/main.scss</code> en ajoutant deux polices <a href="https://www.google.com/fonts">google fonts</a>.</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Add those lines
 </span><span class="k">@import</span> <span class="sx">url("https://fonts.googleapis.com/css?family=Lora:400,700")</span><span class="p">;</span>
@@ -104,13 +104,13 @@
 <span class="c1">// Update this line
 </span><span class="nv">$base-font-family</span><span class="p">:</span> <span class="s2">"Lora"</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span></code></pre></figure>
 
-<p>You shoud now see someting like this.</p>
+<p>Voilà ce que vous devriez maintenant voir.</p>
 
 <p><img src="http://leblog.unpixel.fr/img/14.png" alt="Styling" /></p>
 
-<h1 id="the-header">The header</h1>
+<h1 id="le-header">Le header</h1>
 
-<p>Let’s start by centering the title and add some spaces.</p>
+<p>Commençons par centrer le titre et ajouter un peu d’espace.</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.site-header</span> <span class="p">{</span>
   <span class="nl">border</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
@@ -135,12 +135,12 @@
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Then we’ll add a subtitle with a cool quote. Add a <code>subtitle-quote</code> and a <code>subtitle-author</code> variable to our <code>_config.yml</code> file.</p>
+<p>Ensuite, ajoutons un sous-titre avec une citation. Ajoutez les paramètres <code>subtitle-quote</code> et <code>subtitle-author</code> au fichier <code>_config.yml</code>.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">subtitle-quote</span><span class="pi">:</span> <span class="s2">"</span><span class="s">It</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">I'm</span><span class="nv"> </span><span class="s">so</span><span class="nv"> </span><span class="s">smart.</span><span class="nv"> </span><span class="s">But</span><span class="nv"> </span><span class="s">I</span><span class="nv"> </span><span class="s">stay</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">questions</span><span class="nv"> </span><span class="s">much</span><span class="nv"> </span><span class="s">longer."</span>
 <span class="s">subtitle-author</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Albert</span><span class="nv"> </span><span class="s">Einstein"</span></code></pre></figure>
 
-<p>Now we’ll modify our <code>_includes/header.html</code> file.</p>
+<p>Maintenant, modifions notre fichier <code>_includes/header.html</code>.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"site-header"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
@@ -154,7 +154,7 @@
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/header&gt;</span></code></pre></figure>
 
-<p>And add some style.</p>
+<p>Et ajoutons un peu de style.</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.site-subtitle</span><span class="p">{</span>
   <span class="nl">margin-top</span><span class="p">:</span> <span class="m">60px</span><span class="p">;</span>
@@ -178,12 +178,13 @@
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>You should now see this.</p>
+<p>Vous devriez maintenant voir quelque chose comme ça.</p>
 
 <p><img src="http://leblog.unpixel.fr/img/15.png" alt="Styling" /></p>
 
-<h1 id="the-posts-list">The posts list</h1>
-<p>We will start by making some changes to the <code>index.html</code> file.</p>
+<h1 id="la-liste-des-articles">La liste des articles</h1>
+
+<p>Nous allons commencer par faire quelques modifications au fichier <code>index.html</code>.</p>
 
 <figure class="highlight"><pre><code class="language-liquid" data-lang="liquid">---
 layout: default
@@ -224,7 +225,7 @@ layout: default
   &lt;/div&gt;
 &lt;/div&gt;</code></pre></figure>
 
-<p>In order to get the post summary and image to show we will need to make some changes to our posts. Add a <code>summary</code> and an <code>image</code> variable to the <a href="http://jekyllrb.com/docs/frontmatter/">front matter</a> like this:</p>
+<p>Afin de faire en sorte que le résumé de l’article ainsi que son image apparaissent, nous allons devoir faire quelques modifications à nos articles. Ajoutez les paramètres <code>summary</code> et <code>image</code> au <a href="http://jekyllrb.com/docs/frontmatter/">front matter</a> comme ceci:</p>
 
 <figure class="highlight"><pre><code class="language-markdown" data-lang="markdown"><span class="nn">---</span>
 <span class="s">layout</span><span class="pi">:</span> <span class="s">post</span>
@@ -235,12 +236,12 @@ layout: default
 <span class="s">summary</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Summary</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">my</span><span class="nv"> </span><span class="s">awesome</span><span class="nv"> </span><span class="s">post.</span><span class="nv"> </span><span class="s">I</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">displayed</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">page</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">posts</span><span class="nv"> </span><span class="s">list."</span>
 <span class="nn">---</span></code></pre></figure>
 
-<p>Next we will update the <code>_config.yml</code> file in order to get the pagination working. Add those lines at the end:</p>
+<p>Ensuite, mettez à jour le fichier <code>_config.yml</code> afin que la pagination soit fonctionnelle en ajoutant ces quelques lignes à la fin du fichier:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">gems</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">jekyll-paginate</span><span class="pi">]</span>
 <span class="s">paginate</span><span class="pi">:</span> <span class="s">3</span> <span class="c1"># number of posts you want per page</span></code></pre></figure>
 
-<p>Time to style this in our <code>_theme.scss</code> file.</p>
+<p>Il est temps de styler ceci dans notre fichier <code>_theme.scss</code>.</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
   <span class="nl">font-family</span><span class="p">:</span> <span class="nv">$title-font-family</span><span class="p">;</span>
@@ -310,16 +311,16 @@ layout: default
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Our blog should look like this.</p>
+<p>Votre blog devrait resembler à cela.</p>
 
 <p><img src="http://leblog.unpixel.fr/img/16.png" alt="Styling" /></p>
 
-<p>We’ll finish by adding a cool hover effect to our post titles that you can find on my <a href="http://codepen.io/unpixel">codepen</a>.</p>
+<p>Nous allons finir par ajouter un effet de survol aux titres de nos articles comme celui que vous pouvez voir sur mon <a href="http://codepen.io/unpixel">codepen</a>.</p>
 
 <p data-height="213" data-theme-id="0" data-slug-hash="NGoPjP" data-default-tab="result" data-user="unpixel" class="codepen">See the Pen <a href="http://codepen.io/unpixel/pen/NGoPjP/">Hover effect</a> by Julien Monty (<a href="http://codepen.io/unpixel">@unpixel</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<p>So, change the <code>.post-link</code> properties like this:</p>
+<p>Pour cela, changez les propriétés css de <code>.post-link</code> comme ceci:</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.post-link</span><span class="o">,</span>
 <span class="nc">.post-link</span><span class="nd">:visited</span> <span class="p">{</span>
@@ -344,11 +345,11 @@ layout: default
   <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>And update the <code>$brand-color</code> variable in the <code>css/main.scss</code> file with a color of your choice.</p>
+<p>Et changez la variable <code>$brand-color</code> dans le fichier <code>css/main.scss</code> avec la couleur de votre choix.</p>
 
-<h1 id="the-footer">The footer</h1>
+<h1 id="le-footer">Le footer</h1>
 
-<p>Let’s now clean our footer in <code>_includes/footer.html</code>.</p>
+<p>Commençons par néttoyer notre footer dans <code>_includes/footer.html</code>.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"site-footer"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
@@ -367,9 +368,9 @@ layout: default
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/footer&gt;</span></code></pre></figure>
 
-<p>If you don’t want your username to appear next to your social icons, remove them from <code>_includes/icon-github.html</code> and <code>_includes/icon-twitter.html</code>.</p>
+<p>Si vous ne voulez pas du texte qui apparait à côté de vos icônes twitter et github, vous pouvez le supprimer dans les fichiers <code>_includes/icon-github.html</code> et <code>_includes/icon-twitter.html</code>.</p>
 
-<p>Finally, add some style to the social icons.</p>
+<p>Enfin, ajoutez un peu de style aux icônes.</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.social-media-list</span> <span class="p">{</span>
   <span class="nl">margin</span><span class="p">:</span> <span class="m">30px</span> <span class="m">0</span><span class="p">;</span>
@@ -392,11 +393,11 @@ layout: default
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here our footer.</p>
+<p>Et voici notre footer.</p>
 
 <p><img src="http://leblog.unpixel.fr/img/17.png" alt="Styling" /></p>
 
-<p>That’s it for this tutorial. Stay tuned for part II!</p>
+<p>C’est tout pour le moment… En attendant le prochain tutoriel!</p>
 
 
     </div>

@@ -5,8 +5,8 @@
     <description></description>
     <link>http://leblog.unpixel.fr/</link>
     <atom:link href="http://leblog.unpixel.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Nov 2015 22:12:56 +0100</pubDate>
-    <lastBuildDate>Thu, 19 Nov 2015 22:12:56 +0100</lastBuildDate>
+    <pubDate>Sat, 21 Nov 2015 23:22:57 +0100</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2015 23:22:57 +0100</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -293,26 +293,26 @@ layout: default_post
     
       <item>
         <title>Personnaliser son blog Jekyll - Partie I</title>
-        <description>&lt;p&gt;This tutorial is part of a series of tutorials on how to build, maintain and customize a Jekyll blog. If you haven’t read the previous ones, please go through them:&lt;/p&gt;
+        <description>&lt;p&gt;Ce tutoriel fait parti d’une série de tutoriels sur comment créer, maintenir et personnaliser un blog avec Jekyll. Si vous n’avez pas lu les tutoriels précédents, allez y jeter un oeil:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/2015-11-11-creer-votre-blog-avec-jekyll/&quot;&gt;Build your own blog with Jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2015-11-12-maintenir-son-blog-jekyll-efficacement-avec-gulp/&quot;&gt;A better Jekyll workflow with gulp&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Customize your Jekyll blog - Part I&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/&quot;&gt;Customize your Jekyll blog - Part II&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-11-creer-votre-blog-avec-jekyll/&quot;&gt;Créer votre blog avec Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-12-maintenir-son-blog-jekyll-efficacement-avec-gulp/&quot;&gt;Maintenir son blog Jekyll efficacement avec Gulp&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Personnaliser son blog Jekyll - Partie I&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2015-11-14-personnaliser-son-blog-jekyll-partie-ii/&quot;&gt;Personnaliser son blog Jekyll - Partie II&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;You can view or download the source files on the &lt;a href=&quot;https://github.com/konpa/jekyll-tutorial/tree/part-three&quot;&gt;Jekyll tutorial github repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Vous pouvez voir et télécharger les fichiers sources de ce tutoriel sur &lt;a href=&quot;https://github.com/konpa/jekyll-tutorial/tree/part-three&quot;&gt;son dépôt Github&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h1 id=&quot;set-up&quot;&gt;Set up&lt;/h1&gt;
+&lt;h1 id=&quot;mise-en-place&quot;&gt;Mise en place&lt;/h1&gt;
 
-&lt;p&gt;Let’s begin by adding a &lt;code&gt;_theme.scss&lt;/code&gt; file in our &lt;code&gt;_sass&lt;/code&gt; folder where we will write all the style of our new Jekyll theme.&lt;/p&gt;
+&lt;p&gt;Commençons par ajouter un fichier &lt;code&gt;_theme.scss&lt;/code&gt; dans notre dossier &lt;code&gt;_sass&lt;/code&gt; où nous écrirons toutes les règles de style pour notre thème Jekyll.&lt;/p&gt;
 
-&lt;p&gt;Update the &lt;code&gt;@import&lt;/code&gt; part of the &lt;code&gt;css/main.scss&lt;/code&gt; file like this:&lt;/p&gt;
+&lt;p&gt;Mettez à jour la partie &lt;code&gt;@import&lt;/code&gt; du fichier &lt;code&gt;css/main.scss&lt;/code&gt; comme ceci:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;base&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;layout&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;syntax-highlighting&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;theme&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;In order to keep the margin right, we have to make a small change to the &lt;code&gt;_sass/_base.scss&lt;/code&gt; on the &lt;code&gt;Set margin-bottom to maintain vertical rhythm&lt;/code&gt; section. Replace it by:&lt;/p&gt;
+&lt;p&gt;Afin de garder un espacement correcte, il faut faire une petite mise à jour dans le fichier &lt;code&gt;_sass/_base.scss&lt;/code&gt; dans la partie &lt;code&gt;Set margin-bottom to maintain vertical rhythm&lt;/code&gt;. Remplacez la par:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;blockquote&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;ol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;dl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;figure&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;     
   &lt;span class=&quot;nl&quot;&gt;margin-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$spacing-unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -321,7 +321,7 @@ layout: default_post
   &lt;span class=&quot;nl&quot;&gt;margin-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$spacing-unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Finally, we’ll change the font in the &lt;code&gt;css/main.scss&lt;/code&gt; file by adding two &lt;a href=&quot;https://www.google.com/fonts&quot;&gt;google fonts&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Enfin, changeons la police de caractères dans &lt;code&gt;css/main.scss&lt;/code&gt; en ajoutant deux polices &lt;a href=&quot;https://www.google.com/fonts&quot;&gt;google fonts&lt;/a&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Add those lines
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&quot;https://fonts.googleapis.com/css?family=Lora:400,700&quot;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -332,13 +332,13 @@ layout: default_post
 &lt;span class=&quot;c1&quot;&gt;// Update this line
 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$base-font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Lora&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Helvetica&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sans-serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;You shoud now see someting like this.&lt;/p&gt;
+&lt;p&gt;Voilà ce que vous devriez maintenant voir.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/14.png&quot; alt=&quot;Styling&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;the-header&quot;&gt;The header&lt;/h1&gt;
+&lt;h1 id=&quot;le-header&quot;&gt;Le header&lt;/h1&gt;
 
-&lt;p&gt;Let’s start by centering the title and add some spaces.&lt;/p&gt;
+&lt;p&gt;Commençons par centrer le titre et ajouter un peu d’espace.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.site-header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -363,12 +363,12 @@ layout: default_post
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Then we’ll add a subtitle with a cool quote. Add a &lt;code&gt;subtitle-quote&lt;/code&gt; and a &lt;code&gt;subtitle-author&lt;/code&gt; variable to our &lt;code&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Ensuite, ajoutons un sous-titre avec une citation. Ajoutez les paramètres &lt;code&gt;subtitle-quote&lt;/code&gt; et &lt;code&gt;subtitle-author&lt;/code&gt; au fichier &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;subtitle-quote&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;It&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;not&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;that&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;I&#39;m&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;so&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;smart.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;But&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;stay&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;questions&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;much&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;longer.&quot;&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;subtitle-author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Albert&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Einstein&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now we’ll modify our &lt;code&gt;_includes/header.html&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Maintenant, modifions notre fichier &lt;code&gt;_includes/header.html&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;site-header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -382,7 +382,7 @@ layout: default_post
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;And add some style.&lt;/p&gt;
+&lt;p&gt;Et ajoutons un peu de style.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.site-subtitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;60px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -406,12 +406,13 @@ layout: default_post
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;You should now see this.&lt;/p&gt;
+&lt;p&gt;Vous devriez maintenant voir quelque chose comme ça.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/15.png&quot; alt=&quot;Styling&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;the-posts-list&quot;&gt;The posts list&lt;/h1&gt;
-&lt;p&gt;We will start by making some changes to the &lt;code&gt;index.html&lt;/code&gt; file.&lt;/p&gt;
+&lt;h1 id=&quot;la-liste-des-articles&quot;&gt;La liste des articles&lt;/h1&gt;
+
+&lt;p&gt;Nous allons commencer par faire quelques modifications au fichier &lt;code&gt;index.html&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;---
 layout: default
@@ -452,7 +453,7 @@ layout: default
   &amp;lt;/div&amp;gt;
 &amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;In order to get the post summary and image to show we will need to make some changes to our posts. Add a &lt;code&gt;summary&lt;/code&gt; and an &lt;code&gt;image&lt;/code&gt; variable to the &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;front matter&lt;/a&gt; like this:&lt;/p&gt;
+&lt;p&gt;Afin de faire en sorte que le résumé de l’article ainsi que son image apparaissent, nous allons devoir faire quelques modifications à nos articles. Ajoutez les paramètres &lt;code&gt;summary&lt;/code&gt; et &lt;code&gt;image&lt;/code&gt; au &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;front matter&lt;/a&gt; comme ceci:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
@@ -463,12 +464,12 @@ layout: default
 &lt;span class=&quot;s&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Summary&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;my&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;awesome&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;post.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;will&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;be&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;displayed&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;posts&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;list.&quot;&lt;/span&gt;
 &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Next we will update the &lt;code&gt;_config.yml&lt;/code&gt; file in order to get the pagination working. Add those lines at the end:&lt;/p&gt;
+&lt;p&gt;Ensuite, mettez à jour le fichier &lt;code&gt;_config.yml&lt;/code&gt; afin que la pagination soit fonctionnelle en ajoutant ces quelques lignes à la fin du fichier:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;jekyll-paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# number of posts you want per page&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Time to style this in our &lt;code&gt;_theme.scss&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Il est temps de styler ceci dans notre fichier &lt;code&gt;_theme.scss&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h6&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title-font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -538,16 +539,16 @@ layout: default
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Our blog should look like this.&lt;/p&gt;
+&lt;p&gt;Votre blog devrait resembler à cela.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/16.png&quot; alt=&quot;Styling&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;We’ll finish by adding a cool hover effect to our post titles that you can find on my &lt;a href=&quot;http://codepen.io/unpixel&quot;&gt;codepen&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nous allons finir par ajouter un effet de survol aux titres de nos articles comme celui que vous pouvez voir sur mon &lt;a href=&quot;http://codepen.io/unpixel&quot;&gt;codepen&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p data-height=&quot;213&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;NGoPjP&quot; data-default-tab=&quot;result&quot; data-user=&quot;unpixel&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/unpixel/pen/NGoPjP/&quot;&gt;Hover effect&lt;/a&gt; by Julien Monty (&lt;a href=&quot;http://codepen.io/unpixel&quot;&gt;@unpixel&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 &lt;script async=&quot;&quot; src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;So, change the &lt;code&gt;.post-link&lt;/code&gt; properties like this:&lt;/p&gt;
+&lt;p&gt;Pour cela, changez les propriétés css de &lt;code&gt;.post-link&lt;/code&gt; comme ceci:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.post-link&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
 &lt;span class=&quot;nc&quot;&gt;.post-link&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:visited&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -572,11 +573,11 @@ layout: default
   &lt;span class=&quot;nl&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;And update the &lt;code&gt;$brand-color&lt;/code&gt; variable in the &lt;code&gt;css/main.scss&lt;/code&gt; file with a color of your choice.&lt;/p&gt;
+&lt;p&gt;Et changez la variable &lt;code&gt;$brand-color&lt;/code&gt; dans le fichier &lt;code&gt;css/main.scss&lt;/code&gt; avec la couleur de votre choix.&lt;/p&gt;
 
-&lt;h1 id=&quot;the-footer&quot;&gt;The footer&lt;/h1&gt;
+&lt;h1 id=&quot;le-footer&quot;&gt;Le footer&lt;/h1&gt;
 
-&lt;p&gt;Let’s now clean our footer in &lt;code&gt;_includes/footer.html&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Commençons par néttoyer notre footer dans &lt;code&gt;_includes/footer.html&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;footer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;site-footer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -595,9 +596,9 @@ layout: default
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/footer&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;If you don’t want your username to appear next to your social icons, remove them from &lt;code&gt;_includes/icon-github.html&lt;/code&gt; and &lt;code&gt;_includes/icon-twitter.html&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Si vous ne voulez pas du texte qui apparait à côté de vos icônes twitter et github, vous pouvez le supprimer dans les fichiers &lt;code&gt;_includes/icon-github.html&lt;/code&gt; et &lt;code&gt;_includes/icon-twitter.html&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Finally, add some style to the social icons.&lt;/p&gt;
+&lt;p&gt;Enfin, ajoutez un peu de style aux icônes.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.social-media-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -620,11 +621,11 @@ layout: default
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Here our footer.&lt;/p&gt;
+&lt;p&gt;Et voici notre footer.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://leblog.unpixel.fr/img/17.png&quot; alt=&quot;Styling&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;That’s it for this tutorial. Stay tuned for part II!&lt;/p&gt;
+&lt;p&gt;C’est tout pour le moment… En attendant le prochain tutoriel!&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 13 Nov 2015 09:00:00 +0100</pubDate>
